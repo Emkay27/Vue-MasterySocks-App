@@ -1,5 +1,5 @@
 # Vue Mastery Socks App
-_This is to learn the fundamentals of Vue.js and build an app to put these concepts in practice, this from the Vue Mastery course_
+_This is to learn the fundamentals of Vue.js and build an app to put these concepts in practice, this is from the Vue Mastery course_
 
-The current display of the app is as follows:
-![](VApic1.png)
+We can add and remove an item to the cart, below is the current display of the app:
+![](VueApp.gif)
