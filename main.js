@@ -4,8 +4,7 @@ const app = Vue.createApp({
             cart:0,
             product: 'Socks',
             image: './assets/images/socks_green.jpg',
-            Inventory: 100,
-            onSale: true,
+            inStock: false,
             details: ['50% cotton', '30% wool', '20% polyester'],
             variants: [
                 {id: 2234, color: 'green', image: './assets/images/socks_green.jpg'},
@@ -21,9 +20,7 @@ const app = Vue.createApp({
             this.image = variantImage;
         },
         removeFromCart(){
-            if(this.cart > 0){ //Only remove from cart when there's something in the cart.
-                this.cart -= 1;
-            }
+            this.cart -= 1;
         }
     }
 })
