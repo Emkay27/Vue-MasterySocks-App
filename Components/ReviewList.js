@@ -12,7 +12,7 @@ app.component('review-list', {
     <h3>Reviews:</h3>
         <ul>
             <li v-for="(review, index) in reviews" :key=index>
-            {{ review.name }} gave this {{ review.ratings}} stars
+            {{ review.name }} gave this {{ review.rating}} stars
             <br/>
             "{{ review.review }}"
             </li>
