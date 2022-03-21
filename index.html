@@ -12,54 +12,24 @@
     <div id="app">
       <div class="nav-bar"></div>
       
-      <div class="cart">Cart({{ cart }})</div>
+      <div class="cart">Cart({{ cart.length }})</div>
+      <product-display 
+      :premium="premium" 
+      @add-to-cart="updateCart" 
+      @remove-from-cart="removeById"
+      ></product-display>
+      
 
-      <div class="product-display">
-        <div class="product-container">
-          <div class="product-image">
-            <img :class="{ 'out-of-stock-img': !inStock}" :src="image">
-          </div>
-          <div class="product-info">
-            <h1>{{ title }}</h1>
-            <p>{{ saleMessage }}</p>
-            <p v-if="inStock > 0">In Stock</p>
-            <p v-else>Out of Stock</p>
-            <ul>
-              <li v-for="detail in details">{{ detail }}</li>
-            </ul>            
-            <ul>
-              <li v-for="(size, index) in sizes" :key="index">{{ size }}</li>
-            </ul>
-            <div v-for="(variant, index) in variants" 
-            :key="variant.id" 
-            @mouseover="updateVariant(index)"
-            class="color-circle"
-            :style="{backgroundColor: variant.color}"
-            >
-            </div>
-            <button 
-            class="button" 
-            :disabled="!inStock"
-            :class="{ disabledButton: !inStock }"
-            @click="addToCart"
-            >
-            Add to Cart
-          </button>
-            <button 
-            class="button"
-            :disabled="cart == 0"
-            :class="{ disabledButton: cart == 0 }" 
-            @click="removeFromCart"
-            >
-            Remove from Cart
-          </button>
-          </div>
-        </div>
-      </div>
     </div>
 
     <!-- Import App -->
     <script src="./main.js"></script>
+
+    <!-- Import Components -->
+    <script src="./Components/ProductDisplay.js"></script>
+
+    <script src="./Components/ReviewForm.js"></script>
+    <script src="./Components/ReviewList.js"></script>
 
     <!-- Mount App -->
     <script>
